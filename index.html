@@ -11,7 +11,24 @@
     
 </head>
 <body> 
-    
+    <div class="modal fade" id="confirmacaoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmar Remoção</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza de que deseja remover este comentário?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-danger" id="confirmarRemocao">Sim</button>
+                </div>
+             </div>
+        </div>
+    </div>
+
     <div class="container">
         <H1 class="text-center">Sistema de Comentários</H1>
         <form id="meuForm">
@@ -23,10 +40,14 @@
             <button type="submit" class="btn btn-primary" id="addComentario">Enviar</button>
         </form>
     </div>
+    <div class="btn-group mb-3" role="group">
+        <button type="button" class="btn btn-secondary ms-1" id="ordenarRecente">Mais Recentes</button>
+        <button type="button" class="btn btn-secondary ms-1" id="ordenarAntigo">Mais Antigos</button>
+    </div>
     <br>    
     <div id="comentarios">
         <h3 class="text-center">Comentários</h3>
-        <ul class="list-group" id="lista">
+        <ul class="list-group" id="lista" style="max-height: 70vh; overflow-y: auto; overflow-x: hidden;">
         </ul>
     </div>
     <script src="script.js"></script>
